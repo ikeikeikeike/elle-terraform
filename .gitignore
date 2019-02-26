@@ -1,0 +1,29 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+terraform.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.d
+.terraform
+/credentials/outputs.tf
+/tmp
+
+/gcp/asia-northeast1/credentials_modules.tf
+/gcp/asia-northeast1/elle.cert
+/gcp/asia-northeast1/elle.chain
+/gcp/asia-northeast1/elle.key
+
+README.md
+
+/modules/gcp/dns/elle.tf
+
+.hg
+
