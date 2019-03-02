@@ -1,7 +1,13 @@
 #!/bin/bash
 
 vault=`which ansible-vault`
+secret=../../secret/vault-password.txt
 
-echo `$vault view .gcpkey.json.vault | cat -` > /tmp/elle-gcpkey.json
+if [ ! -f $secret ]; then
+    read -sp "Password: " PASS
+    mkdir -p ../../secret && echo $PASS > $secret
+fi
 
-$vault view .env.vault | cat -
+echo `$vault view .gcpkey.json.vault --vault-password-file=$secret | cat -` > /tmp/elle-gcpkey.json
+
+$vault view .env.vault --vault-password-file=$secret | cat -
